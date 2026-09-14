@@ -1,84 +1,143 @@
 # PufiX
 
-**RU:** Мини-терминал для Android (PyDroid 3) с системой пакетов.
-**EN:** Mini terminal emulator for Android (PyDroid 3) with package system.
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
+![Python](https://img.shields.io/badge/python-3.x-green)
+![License](https://img.shields.io/badge/license-MIT-orange)
 
----
+A text-based terminal application inspired by **Termux**, packed with utilities, games, and tools.
 
-## Возможности / Features
+## Features
 
-- **RU:** Менеджер пакетов (pkg install/remove/list/commands)
-  **EN:** Package manager (pkg install/remove/list/commands)
-- **RU:** 12 встроенных пакетов
-  **EN:** 12 built-in packages
-- **RU:** Markdown-заметки (emerald) с чекбоксами
-  **EN:** Markdown notes (emerald) with checkboxes
-- **RU:** Фонетика, soundex, leet (esound)
-  **EN:** Phonetics, soundex, leet (esound)
-- **RU:** Азбука Морзе (morse)
-  **EN:** Morse code (morse)
-- **RU:** Таблицы конверсии размеров (qlist_tablesizes)
-  **EN:** Size conversion tables (qlist_tablesizes)
-- **RU:** RGB/HSV/HEX цвета (rgbhsvhex)
-  **EN:** RGB/HSV/HEX colors (rgbhsvhex)
-- **RU:** ASCII-смайлики (face)
-  **EN:** ASCII faces (face)
-- **RU:** Генератор паролей (crpassword)
-  **EN:** Password generator (crpassword)
-- **RU:** Текст ↔ бинарный (binarytext)
-  **EN:** Text ↔ binary (binarytext)
-- **RU:** Манипуляции с текстом (text)
-  **EN:** Text manipulation (text)
-- **RU:** Системная информация (sys)
-  **EN:** System information (sys)
-- **RU:** Редактор файлов (window_editor)
-  **EN:** File editor (window_editor)
+- 📝 **Notebook** — save and manage notes
+- 🧮 **Calculator** — basic math operations
+- 🎮 **Games** — rock-paper-scissors, dice, coin-flip, guess-the-number
+- ⏱️ **Timer** — countdown timer
+- 📚 **Text Tools** — text formatting, colorization
+- 📦 **Package System** — install/remove packages dynamically
+- 🎨 **Customization** — custom colors, text styles, lines
+- 💾 **Profile** — save user profile with name and Telegram
 
----
+## Commands
 
-## Установка / Install
+### Core Commands
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `me` | — | Show your name |
+| `tg` | — | Show your Telegram username |
+| `set.tg` | — | Set your Telegram username |
+| `edit.name` | `e.n` | Edit your name |
+| `my.profile` | `profile` | View full profile |
+| `.` or `help` | — | Show all commands |
 
-**RU:**
-1. Установи PyDroid 3 на Android
-2. Скачай все `.py` файлы
-3. Положи в одну папку
-4. Запусти `PufiX_tTermux.py`
+### Games 🎮
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `guess-the-number` | `gtn` | Guess the number (1-10) |
+| `rock-paper-scissors` | `rps` | Play RPS against computer |
+| `dice` | — | Roll a dice (1-6) |
+| `coin-flip` | `cf` | Flip a coin |
 
-**EN:**
-1. Install PyDroid 3 on Android
-2. Download all `.py` files
-3. Put them in one folder
-4. Run `PufiX_tTermux.py`
+### Tools ⏱️
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `timer` | `t` | Countdown timer |
+| `calc.base` | — | Basic calculator (+, -, *, /) |
+| `py.base` | — | Python print/input helper |
 
----
+### Notebook 📝
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `notebook` | `nb` | Open notebook for writing |
+| `e.notebook` | `e.nb` | Save and exit notebook |
+| `find.notebook` | — | View saved notes |
 
-## Команды / Commands
+### Text & Lines 🎨
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `m <text>` | — | Print colored text |
+| `line` | — | Print line with `-` |
+| `bigline` | — | Print line with `=` |
+| `sbigline` | — | Print line with `≡` |
+| `xline` | — | Print line with `\|\|\|` |
+| `aline` | — | Print line with `≈` |
+| `fline` | — | Print line with `.` |
+| `gline` | — | Print line with `•·` |
+| `pline` | — | Print line with `` ` `` |
+| `undertext` | `ut` | Enable underline text |
+| `basetext` | `bt` | Reset text formatting |
 
-**RU:** Введи `help` внутри PufiX, чтобы увидеть все команды.
-**EN:** Type `help` inside PufiX to see all available commands.
+### System
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `clear` | — | Clear terminal |
+| `incognito` | — | Incognito mode |
+| `red.sys` | `r.s` | Red system prompt |
+| `set.title` | — | Set custom title |
+| `!program` | `!p` | Show program info |
+| `inspired` | — | Show inspiration |
 
----
+### History
+| Command | Description |
+|---------|-------------|
+| `history` | Show last 10 commands |
+| `history.clear` | Clear command history |
 
-## Пакеты / Packages
+### Package System 📦
+| Command | Description |
+|---------|-------------|
+| `pkg list` | List installed packages |
+| `pkg install <name>` | Install a package |
+| `pkg remove <name>` | Remove a package |
+| `pkg commands` | Show all package commands |
+| `pkg commands <name>` | Show commands for specific package |
 
-| Package | Commands |
-|---------|----------|
-| face | face.list, face.random, face.* |
-| window_editor | create file, delete file, list files, edit, read |
-| sys | date, time, version |
-| text | upper, lower, reverse, count, replace |
-| crpassword | genpass, genpin, genpass-strong |
-| binarytext | to-binary, from-binary |
-| rgbhsvhex | rgb, hsv, hex, list colors |
-| morse | to-morse, from-morse |
-| qlist | qlist, qlist all |
-| qlist_tablesizes | qlist_tablesizes |
-| esound | sound, soundex, syllables, leet, vowels, consonants, spell |
-| emerald | new, list, show, edit, delete, search, links, tags, stats, daily, set.y, set.n |
+## Installed Packages
 
----
+- **face** — emoji faces
+- **window_editor** — text editor
+- **sys** — system info (date, time, etc.)
+- **text** — text processing
+- **crpassword** — password generator
+- **binarytext** — binary/text conversion
+- **rgbhsvhex** — color conversion
+- **morse** — morse code
+- **qlist** — quick list management
+- **qlist_tablesizes** — table tools
+- **esound** — sound effects
+- **emerald** — emerald theme
 
-## Лицензия / License
+## Installation
 
-**RU:** MIT
-**EN:** MIT
+git clone https://github.com/TOYTTQE/PufiX.git
+cd PufiX
+python3 PufiX
+
+## Usage
+
+Run the program:
+
+python3 PufiX
+
+Enter your name and Telegram username on first run.
+
+## What's New in v1.1.0 🎉
+
+✨ **New Games:**
+- 🎮 Rock-Paper-Scissors (`rps`) — play against computer
+- 🎲 Dice (`dice`) — roll a dice
+- 🪙 Coin Flip (`cf`) — flip a coin
+
+⏱️ **New Tools:**
+- `timer` — countdown timer with live display
+
+## License
+
+MIT License — feel free to use and modify!
+
+## Author
+
+Created with ❤️ by TOYTTQE
+
+## Inspired by
+
+TERMUX ⟩_ (Linux environment)
