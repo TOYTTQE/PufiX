@@ -74,7 +74,7 @@ while True:
 		else:
 			print("You: \033[33m" + name + "\033[0m")
 	elif command == "." or command == "help":
-		print("[ me | tg | set.tg | edit.name | py.base | calc.base | notebook | e.notebook | find.notebook | undertext | basetext | red.sys | incognito | m text | set.title | line | bigline | sbigline | xline | aline | gline | fline | pline | guess-the-number | history | history.clear | my.profile | inspired ]")
+		print("[ me | tg | set.tg | edit.name | py.base | calc.base | notebook | e.notebook | find.notebook | undertext | basetext | red.sys | incognito | m text | set.title | line | bigline | sbigline | xline | aline | gline | fline | pline | guess-the-number | rock-paper-scissors | dice | coin-flip | timer | history | history.clear | my.profile | inspired ]")
 	elif command == "undertext" or command == "ut":
 		print("\033[7m")
 		continue
@@ -269,6 +269,56 @@ while True:
 			print("\033[33;1m[PufiX Pkg] Removed: " + pkg_name + "\033[0m")
 		else:
 			print("\033[31;1m[PufiX Pkg] Error: package not installed\033[0m")
+	elif command == "rock-paper-scissors" or command == "rps":
+		try:
+			size = int(input("Size: "))
+		except ValueError:
+			print("\033[31m\033[1mError: NoNumber\033[0m")
+			continue
+		print("=" * size)
+		print("\033[1m          [ WRITE THE \"r\", \"p\" \033[31mOR\033[37m \"s\" | \"q\" — quit ]             \033[0m")
+		while True:
+			itemrps = input("\033[33;1m[ YOU ]\033[0m ")
+			sysrps = random.choice(["r", "p", "s"])
+			if itemrps == "r":
+				if sysrps == "r":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\nYOU vs SYS: ----")
+				elif sysrps == "p":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\n YOU vs SYS: SYS")
+				elif sysrps == "s":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\n YOU vs SYS: YOU")	
+			elif itemrps == "p":
+				if sysrps == "r":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\nYOU vs SYS: YOU")
+				elif sysrps == "p":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\n YOU vs SYS: ----")
+				elif sysrps == "s":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\n YOU vs SYS: SYS")	
+			elif itemrps == "s":
+				if sysrps == "r":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\nYOU vs SYS: SYS")
+				elif sysrps == "p":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\n YOU vs SYS: YOU")
+				elif sysrps == "s":
+					print("\033[1mYOU: \033[33m" + itemrps + "\n\033[37mSYS: \033[33m" + sysrps + "\033[0m" + "\n YOU vs SYS: ----")
+			elif itemrps == "q":				
+				print("=" * size)
+				break
+	elif command == "dice":
+		print("\033[33;1m               " + random.choice(["⚀ / 1", "⚁ / 2", "⚂ / 3", "⚃ / 4", "⚄ / 5", "⚅ / 6"]) + " \033[0m")
+	elif command == "coin-flip" or command == "cf":
+		print("\033[33;1m" + random.choice(["HEADS ❶ ", "TAILS 🪙 "]) + "\033[0m")
+	elif command == "timer" or command == "t":
+		try:
+			seconds = int(input("Seconds: "))
+		except ValueError:
+			print("\033[31m\033[1mError: NoNumber\033[0m")
+			continue
+		import time
+		for sec in range(seconds, 0, -1):
+			print(f"\033[33;1m {sec}s \033[0m", end="\r")
+			time.sleep(1)
+		print("\033[32;1mFINISHED [ ✓ ]\033[0m")
 	else:
 		handled = False
 		for pkg in installed_packages.values():
